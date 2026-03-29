@@ -157,8 +157,8 @@ class Robot(object):
         self.scheduler = HorizonScheduler(
             H_min=2,
             H_max=self.roll_length,   # original rollout_length as upper bound
-            mode = "increasing",
-            gamma = 5
+            mode = "exp",
+            gamma = 1
         )
 
         self.eval.horizon_history = []

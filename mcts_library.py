@@ -135,17 +135,17 @@ class MCTS(object):
         # root of the tree is current location of the vehicle
 
         # Below is the initial MCTS implementation, which will generate all actions at one time
-        #tree['root'] = (self.cp, 0) #(pose, number of queries) 
-        #actions, dense_paths = self.path_generator.get_path_set(self.cp) 
-        #for action in actions.keys(): #(samples robot observes, path, cost, reward, number of times queried) 
-        #    tree['child '+str(action)] = (actions[action], dense_paths[action], 0, 0, 0) 
-        #return tree
+        tree['root'] = (self.cp, 0) #(pose, number of queries) 
+        actions, dense_paths = self.path_generator.get_path_set(self.cp) 
+        for action in actions.keys(): #(samples robot observes, path, cost, reward, number of times queried) 
+            tree['child '+str(action)] = (actions[action], dense_paths[action], 0, 0, 0) 
+        return tree
     
         # In POMCPOW, 'child' expands in tree policy instead of being generated at initial stage
-        tree['root'] = {"pose": self.cp,"visits": 0,"children": []} #(pose, number of queries)
-        return tree
+        #tree['root'] = {"pose": self.cp,"visits": 0,"children": []} #(pose, number of queries)
+        #return tree
 
-    #def tree_policy(self):
+    def tree_policy(self):
         '''
         Implements the UCB policy to select the child to expand and forward simulate. From Arora paper, the following is defined:
             avg_r - average reward of all rollouts that have passed through node n
@@ -166,7 +166,7 @@ class MCTS(object):
         return random.choice([key for key in leaf_eval.keys() if leaf_eval[key] == max(leaf_eval.values())])
     
     #POMCPOW Implementation
-    def tree_policy(self):
+    #def tree_policy(self):
 
         node = 'root'
 

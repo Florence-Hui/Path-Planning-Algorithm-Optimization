@@ -31,8 +31,8 @@ print ("User specified options: SEED, REWARD_FUNCTION, PATHSET, USE_COST, NONMYO
 # Allow selection of seed world to be consistent, and to run through reward functions
 SEED =  0
 # control the randomness
-np.random.seed(SEED)
-random.seed(SEED)
+#np.random.seed(SEED)
+#random.seed(SEED)
 # SEED = 0 
 REWARD_FUNCTION = "mean"
 PATHSET = "dubins"
@@ -94,20 +94,8 @@ else:
     LEN = 1.0
     NOISE = 1.0
 
-world = envlib.Environment(ranges = ranges,
-                           NUM_PTS = 20, 
-                           variance = VAR,
-                           lengthscale = LEN,
-                           noise = NOISE,
-                           visualize = True,
-                           seed = SEED,
-                           MAX_COLOR = MAX_COLOR,
-                           MIN_COLOR = MIN_COLOR,
-			   model = gp_world,
-                           obstacle_world = ow)
-
 # Create the evaluation class used to quantify the simulation metrics
-evaluation = evalib.Evaluation(world = world, reward_function = REWARD_FUNCTION)
+# evaluation = evalib.Evaluation(world = world, reward_function = REWARD_FUNCTION)
 
 # Generate a prior dataset
 '''
@@ -118,43 +106,97 @@ data = np.vstack([x1observe.ravel(), x2observe.ravel()]).T
 observations = world.sample_value(data)
 '''
 
-# Create the point robot
-robot = roblib.Robot(sample_world = world.sample_value, #function handle for collecting observations
-                     start_loc = (1.0, 1.0,0.0),
-                     extent = ranges, #extent of the explorable environment
-                     MAX_COLOR = MAX_COLOR,
-                     MIN_COLOR = MIN_COLOR,
-                     kernel_file = None,
-                     kernel_dataset = None,
-                     # prior_dataset =  (data, observations), 
-                     # prior_dataset =  (xobs, zobs), 
-                     prior_dataset = None,
-                     init_lengthscale = LEN,
-                     init_variance = VAR,
-                     noise = NOISE,
-                     # noise = float(sys.argv[1]),
-                     path_generator = PATHSET, #options: default, dubins, equal_dubins, fully_reachable_goal, fully_reachable_step
-                     goal_only = GOAL_ONLY, #select only if using fully reachable step and you want the reward of the step to only be the goal
-                     frontier_size = 10,
-                     horizon_length = 1, #1.5 initial
-                     turning_radius = 0.11,
-                     sample_step = 0.1,
-                     evaluation = evaluation, 
-                     f_rew = REWARD_FUNCTION, 
-                     create_animation = True, #logs images to the file folder
-                     learn_params = False, #if kernel params should be trained online
-                     nonmyopic = NONMYOPIC,
-                     discretization = (20, 20), #parameterizes the fully reachable sets
-                     use_cost = USE_COST, #select if you want to use a cost heuristic
-                     computation_budget = 250,
-                     rollout_length = 4,
-                     obstacle_world = ow, 
-                     dimension = 2,
-                     start_time = 0,
-                     tree_type = TREE_TYPE) 
 
-robot.planner(T = 25)
-#robot.visualize_world_model(screen = True)
-robot.visualize_trajectory(screen = False) #creates a summary trajectory image
-robot.plot_information() #plots all of the metrics of interest
+# Create the point robot
+NUM_RUNS = 5
+T = 40
+
+all_regrets = []
+
+for seed in range(NUM_RUNS):
+    print("\n===== Running seed {} =====".format(seed))
+
+    #np.random.seed(seed)
+    #random.seed(seed)
+
+    # --- world ---
+    world = envlib.Environment(
+        ranges = ranges,
+        NUM_PTS = 20, 
+        variance = VAR,
+        lengthscale = LEN,
+        noise = NOISE,
+        visualize = False, 
+        seed = seed,
+        MAX_COLOR = MAX_COLOR,
+        MIN_COLOR = MIN_COLOR,
+        model = gp_world,
+        obstacle_world = ow
+    )
+
+    evaluation = evalib.Evaluation(world = world, reward_function = REWARD_FUNCTION)
+
+    robot = roblib.Robot(
+        sample_world = world.sample_value,
+        start_loc = (1.0, 1.0,0.0),
+        extent = ranges,
+        MAX_COLOR = MAX_COLOR,
+        MIN_COLOR = MIN_COLOR,
+        kernel_file = None,
+        kernel_dataset = None,
+        prior_dataset = None,
+        init_lengthscale = LEN,
+        init_variance = VAR,
+        noise = NOISE,
+        path_generator = PATHSET,
+        goal_only = GOAL_ONLY,
+        frontier_size = 10,
+        horizon_length = 1,
+        turning_radius = 0.11,
+        sample_step = 0.1,
+        evaluation = evaluation,
+        f_rew = REWARD_FUNCTION,
+        create_animation = False, 
+        learn_params = False,
+        nonmyopic = NONMYOPIC,
+        discretization = (20, 20),
+        use_cost = USE_COST,
+        computation_budget = 250,
+        rollout_length = 4,
+        obstacle_world = ow,
+        dimension = 2,
+        start_time = 0,
+        tree_type = TREE_TYPE
+    )
+
+    robot.planner(T = T)
+    robot.visualize_trajectory(screen = False) #creates a summary trajectory image
+    robot.plot_information() #plots all of the metrics of interest
+
+    regret_dict = robot.eval.metrics['simple_regret']
+    regret_list = [regret_dict[t] for t in sorted(regret_dict.keys())]
+
+    all_regrets.append(regret_list)
+    
+
+import matplotlib.pyplot as plt
+
+all_regrets = np.array(all_regrets)
+
+mean = np.mean(all_regrets, axis=0)
+std = np.std(all_regrets, axis=0)
+
+time = np.arange(len(mean))
+
+plt.figure(figsize=(8,6))
+plt.plot(time, mean, label="Mean Simple Regret")
+plt.fill_between(time, mean-std, mean+std, alpha=0.2)
+
+plt.xlabel("Time step")
+plt.ylabel("Simple Regret")
+plt.title("Average Simple Regret over {} runs".format(NUM_RUNS))
+plt.legend()
+
+plt.savefig('./figures/avg_simple_regret.png')
+plt.show()
 
