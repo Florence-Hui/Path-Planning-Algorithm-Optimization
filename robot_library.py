@@ -157,7 +157,7 @@ class Robot(object):
         self.scheduler = HorizonScheduler(
             H_min=2,
             H_max=self.roll_length,   # original rollout_length as upper bound
-            mode = "exp",
+            mode = "decreasing",
             gamma = 1
         )
 
@@ -297,6 +297,11 @@ class Robot(object):
             print ("Current predicted max and value: \t", pred_loc, "\t", pred_val)
             logger.info("Current predicted max and value: {} \t {}".format(pred_loc, pred_val))
 
+            if not hasattr(self.eval, 'time_history'):
+                self.eval.time_history = []
+
+            step_start = time.time()
+
             # If myopic planner
             if self.nonmyopic == False:
                 sampling_path, best_path, best_val, all_paths, all_values, max_locs = self.choose_trajectory(t = t)
@@ -316,7 +321,8 @@ class Robot(object):
                 adaptive_H = self.scheduler.get_H(
                     self.GP,
                     self.uncertainty_grid,
-                    t=t
+                    t=t,
+                    T = T
                 )
                 self.eval.horizon_history.append(adaptive_H)
                 print("Adaptive Horizon at time {}: {}".format(t, adaptive_H))
@@ -342,6 +348,8 @@ class Robot(object):
                     max_val = pred_val, 
                     params = [self.current_max, self.current_max_loc, self.max_val, self.max_locs], 
                     dist = self.dist) 
+            step_end = time.time()
+            self.eval.time_history.append(step_end - step_start)
 
             if best_path == None:
                 break

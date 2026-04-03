@@ -108,11 +108,11 @@ observations = world.sample_value(data)
 
 
 # Create the point robot
-NUM_RUNS = 5
-T = 40
+NUM_RUNS = 2
+T = 60
 
 all_regrets = []
-
+all_time_histories = []
 for seed in range(NUM_RUNS):
     print("\n===== Running seed {} =====".format(seed))
 
@@ -168,8 +168,8 @@ for seed in range(NUM_RUNS):
         start_time = 0,
         tree_type = TREE_TYPE
     )
-
     robot.planner(T = T)
+
     robot.visualize_trajectory(screen = False) #creates a summary trajectory image
     robot.plot_information() #plots all of the metrics of interest
 
@@ -177,7 +177,8 @@ for seed in range(NUM_RUNS):
     regret_list = [regret_dict[t] for t in sorted(regret_dict.keys())]
 
     all_regrets.append(regret_list)
-    
+    all_time_histories.append(robot.eval.time_history)
+
 
 import matplotlib.pyplot as plt
 
@@ -200,3 +201,30 @@ plt.legend()
 plt.savefig('./figures/avg_simple_regret.png')
 plt.show()
 
+all_time_histories = np.array(all_time_histories)
+filtered_histories = []
+for run in all_time_histories:
+    filtered_run = []
+    for t in run:
+        if t < 50:
+            filtered_run.append(t)
+        else:
+            filtered_run.append(np.nan)
+    filtered_histories.append(filtered_run)
+filtered_histories = np.array(filtered_histories)
+mean_time = np.mean(filtered_histories, axis=0)
+std_time = np.std(filtered_histories, axis=0)
+
+time_axis = np.arange(len(mean_time))
+
+plt.figure(figsize=(8,6))
+plt.plot(time_axis, mean_time, label="Mean Time per Step")
+plt.fill_between(time_axis, mean_time-std_time, mean_time+std_time, alpha=0.2)
+
+plt.xlabel("Time step")
+plt.ylabel("Computation Time (s)")
+plt.title("Computation Time per Step")
+plt.legend()
+
+plt.savefig('./figures/time_per_step.png')
+plt.show()

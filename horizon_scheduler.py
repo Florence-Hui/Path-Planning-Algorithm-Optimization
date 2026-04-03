@@ -32,7 +32,7 @@ class HorizonScheduler:
         Larger gamma results in faster horizon growth.
     """
 
-    def __init__(self, H_min, H_max, mode="decreasing", gamma=1.0):
+    def __init__(self, H_min, H_max, mode="decreasing", gamma=1.0, beta = 2.0):
         self.H_min = H_min
         self.H_max = H_max
         self.mode = mode
@@ -40,6 +40,7 @@ class HorizonScheduler:
 
         # Store initial uncertainty for normalization
         self.U0 = None
+        self.U_history = []
 
     def compute_uncertainty(self, gp_model, grid):
         """
@@ -61,7 +62,7 @@ class HorizonScheduler:
         mu, var = gp_model.predict_value(grid)
         return np.sum(var)
 
-    def get_H(self, gp_model, grid, t=None):
+    def get_H(self, gp_model, grid, t=None, T = None):
         """
         Compute adaptive planning horizon H_t.
 
@@ -82,6 +83,22 @@ class HorizonScheduler:
         """
         U_t = self.compute_uncertainty(gp_model, grid)
 
+        if self.U0 is None:
+            self.U0 = U_t
+        
+        self.U_history.append(U_t)
+
+        if len(self.U_history) > 5:
+            slope = abs(self.U_history[-1] - self.U_history[-5])
+        else:
+            slope = float('inf')
+        if not hasattr(self, 'phase'):
+            self.phase = 'exploration'
+
+        # setting the threshold for switching the phase from exploration to exploitation
+        threshold_high = 0.03 * self.U0
+        threshold_low = 0.015 * self.U0
+
         print("time:", t)
         print("uncertainty:", U_t)
 
@@ -90,18 +107,48 @@ class HorizonScheduler:
             self.U0 = U_t
 
         ratio = U_t / self.U0
+        #setting a threshold for phase switching from exploration to exploitation
+        
+        #if self.phase == 'exploration':
+        #    if slope < threshold_low:
+        #        self.phase = 'exploitation'
+        #elif self.phase == 'exploitation':
+        #    if slope > threshold_high:
+        #        self.phase = 'exploration'
+        
+        if self.phase == 'exploration':
+            if self.mode == "decreasing":
+                scale = ratio
 
-        if self.mode == "decreasing":
-            scale = ratio
+            elif self.mode == "increasing":
+                scale = 1.0 - ratio
 
-        elif self.mode == "increasing":
-            scale = 1.0 - ratio
+            elif self.mode == "exp":
+                scale = np.exp(-self.gamma * ratio)
 
-        elif self.mode == "exp":
-            scale = np.exp(-self.gamma * ratio)
 
+        #if self.mode == "decreasing":
+        #    scale = ratio
+
+        #elif self.mode == "increasing":
+        #    scale = 1.0 - ratio
+
+        #elif self.mode == "exp":
+        #    scale = np.exp(-self.gamma * ratio)
+        
+        #elif self.mode == "time_uncertainty":
+        #    if T is None:
+        #        raise ValueError("T must be provided")
+            #original time factor in time_uncertainty
+            #time_factor = 1.0 - (t / float(T))
+
+            #Updated timefactor to slow down shrinkage using sqrt time decay
+        #    time_factor = 1.0 - np.sqrt(t / float(T))
+
+        #    scale = ratio*time_factor
         else:
-            raise ValueError("Invalid horizon scheduling mode.")
+            scale = 0.6
+        
 
         H = self.H_min + (self.H_max - self.H_min) * scale
 
