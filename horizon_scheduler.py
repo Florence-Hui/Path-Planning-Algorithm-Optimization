@@ -92,8 +92,12 @@ class HorizonScheduler:
             slope = abs(self.U_history[-1] - self.U_history[-5])
         else:
             slope = float('inf')
+        
+
         if not hasattr(self, 'phase'):
             self.phase = 'exploration'
+        if not hasattr(self,'locked'):
+            self.locked = False
 
         # setting the threshold for switching the phase from exploration to exploitation
         threshold_high = 0.03 * self.U0
@@ -107,15 +111,19 @@ class HorizonScheduler:
             self.U0 = U_t
 
         ratio = U_t / self.U0
+        confidence = ratio
+        if (not self.locked) and (slope < threshold_low) and (confidence < 0.3):
+            self.locked = True
         #setting a threshold for phase switching from exploration to exploitation
-        
-        #if self.phase == 'exploration':
-        #    if slope < threshold_low:
-        #        self.phase = 'exploitation'
-        #elif self.phase == 'exploitation':
-        #    if slope > threshold_high:
-        #        self.phase = 'exploration'
-        
+        if not self.locked:
+
+            if self.phase == 'exploration':
+                if slope < threshold_low:
+                   self.phase = 'exploitation'
+            elif self.phase == 'exploitation':
+                if slope > threshold_high:
+                    self.phase = 'exploration'
+
         if self.phase == 'exploration':
             if self.mode == "decreasing":
                 scale = ratio
