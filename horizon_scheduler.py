@@ -98,11 +98,13 @@ class HorizonScheduler:
             self.phase = 'exploration'
         if not hasattr(self,'locked'):
             self.locked = False
+        
 
         # setting the threshold for switching the phase from exploration to exploitation
-        threshold_high = 0.03 * self.U0
-        threshold_low = 0.015 * self.U0
-
+        threshold_high = 0.05 * self.U0
+        threshold_low = 0.01 * self.U0
+        if (not self.locked) and (slope < threshold_low or t > 0.6 * T):
+            self.locked = True
         print("time:", t)
         print("uncertainty:", U_t)
 
@@ -134,6 +136,9 @@ class HorizonScheduler:
             elif self.mode == "exp":
                 scale = np.exp(-self.gamma * ratio)
 
+        if self.phase == 'exploitation' and t % 10 == 0:
+            scale = np.exp(-self.gamma * ratio)
+
 
         #if self.mode == "decreasing":
         #    scale = ratio
@@ -155,7 +160,7 @@ class HorizonScheduler:
 
         #    scale = ratio*time_factor
         else:
-            scale = 0.6
+            scale = 0.6 + 0.2 * ratio
         
 
         H = self.H_min + (self.H_max - self.H_min) * scale

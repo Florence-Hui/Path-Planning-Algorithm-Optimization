@@ -715,7 +715,7 @@ class cMCTS(MCTS):
             if self.tree_type == 'belief':
                 self.c = 1000
             elif self.tree_type == 'dpw':
-                self.c = 500
+                self.c = 1000
         elif self.f_rew == 'exp_improve':
             self.c = 200
         elif self.f_rew == 'mes':

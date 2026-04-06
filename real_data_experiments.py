@@ -108,7 +108,7 @@ observations = world.sample_value(data)
 
 
 # Create the point robot
-NUM_RUNS = 2
+NUM_RUNS = 5
 T = 60
 
 all_regrets = []
