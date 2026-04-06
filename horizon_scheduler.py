@@ -163,6 +163,7 @@ class HorizonScheduler:
             scale = 0.6 + 0.2 * ratio
         
 
-        H = self.H_min + (self.H_max - self.H_min) * scale
-
-        return int(np.clip(H, self.H_min, self.H_max))
+        H_raw = self.H_min + (self.H_max - self.H_min) * scale
+        H_clipped = np.clip(H_raw,self.H_min, self.H_max)
+        self.last_H_raw = H_clipped
+        return int(H_clipped)

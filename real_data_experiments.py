@@ -201,6 +201,22 @@ plt.legend()
 plt.savefig('./figures/avg_simple_regret.png')
 plt.show()
 
+plt.figure()
+plt.plot(std)
+plt.xlabel('TIme step')
+plt.ylabel('Std of Simple Regret')
+plt.title('Variance across Runs')
+plt.show()
+
+#finding divergence point between runs
+threshold = 1.0
+for t in range(len(std)):
+    if std[t] > threshold:
+        t_div = t
+        break
+
+print("Divergence point:", t_div)
+
 all_time_histories = np.array(all_time_histories)
 filtered_histories = []
 for run in all_time_histories:

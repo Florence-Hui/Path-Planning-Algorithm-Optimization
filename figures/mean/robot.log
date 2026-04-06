@@ -19649,3 +19649,703 @@ INFO:robot:[36] Current Location: (8.80053328781811, 0.9458049670104284, 0.75471
 INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 28.430716253308688
 INFO:robot:[37] Current Location: (8.833228078032596, 1.9361652863814922, 1.572934852832252)
 INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 28.430716217837887
+INFO:robot:Environment seed: 0
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 27.74400098182417 at location [2.10526316 1.05263158]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:Environment seed: 0
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 27.74400098182417 at location [2.10526316 1.05263158]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:[1] Current Location: (0.7473346760135438, 1.961984586851064, 1.8767743382197173)
+INFO:robot:Current predicted max and value: [1.31313131 0.80808081] 	 23.354622057048754
+INFO:robot:[2] Current Location: (1.7407471191960746, 2.0108295355592762, 6.283185307179581)
+INFO:robot:Current predicted max and value: [1.71717172 1.11111111] 	 25.43742693864328
+INFO:robot:[3] Current Location: (2.7065298327228535, 2.2688973941685333, 0.264133120753427)
+INFO:robot:Current predicted max and value: [2.32323232 1.71717172] 	 27.211012565137246
+INFO:robot:[4] Current Location: (3.1936606733563604, 1.4428467180181175, 5.150180476135177)
+INFO:robot:Current predicted max and value: [2.32323232 1.71717172] 	 26.476067984514327
+INFO:robot:[5] Current Location: (3.8368243837000438, 0.6775521923018657, 5.41431359688861)
+INFO:robot:Current predicted max and value: [2.42424242 1.91919192] 	 26.09773849879818
+INFO:robot:[6] Current Location: (4.707211606954968, 1.0801465999374529, 0.5282662415068593)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.972065373145078
+INFO:robot:[7] Current Location: (5.666115455105686, 0.830374861156481, 5.99323158153628)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.925066096450408
+INFO:robot:[8] Current Location: (6.665367238953981, 0.8015453299373049, 6.257364702289711)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.92192579153281
+INFO:robot:[9] Current Location: (6.943730504728401, 1.7192435743141077, 1.3713173469079614)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91494670486327
+INFO:robot:[10] Current Location: (7.76808018672359, 2.2690891101569983, 0.5530973797577957)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91504424079822
+INFO:robot:[11] Current Location: (7.498995852994739, 3.189550840380785, 1.9502353315556316)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.9155838529745
+INFO:robot:[12] Current Location: (7.888191290905993, 4.100818870436154, 1.1320153644054656)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.913692880798493
+INFO:robot:[13] Current Location: (8.819376918015434, 4.439604701539992, 0.3137953972553005)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91383251100719
+INFO:robot:[14] Current Location: (8.776132537732604, 5.397616235415666, 1.7109333490531364)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914092687498734
+INFO:robot:[15] Current Location: (9.3702302313959, 6.190667584242385, 0.8927133819029716)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91409659992917
+INFO:robot:[16] Current Location: (9.26637933022081, 7.176110379039245, 1.7109333490531378)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914097081892905
+INFO:robot:[17] Current Location: (9.387017949511158, 8.16847200311085, 1.446800228299703)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914099668100985
+INFO:robot:[18] Current Location: (8.78019761858394, 8.951831178371666, 2.2650201954498685)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91411823444755
+INFO:robot:[19] Current Location: (7.793625226937856, 9.044337543199434, 3.0832401626000356)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914121422041664
+INFO:robot:[20] Current Location: (6.844536656240922, 9.358290014708688, 2.819107041846604)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123406817655
+INFO:robot:[21] Current Location: (5.956900181174319, 8.91785386766435, 3.6373270089967695)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123350751375
+INFO:robot:[22] Current Location: (5.0066278161570406, 9.19868289710467, 2.819107041846604)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123212320668
+INFO:robot:[23] Current Location: (4.008842465160573, 9.259998985785959, 3.0832401626000365)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123263906756
+INFO:robot:[24] Current Location: (4.204975400731196, 8.284916433963478, 4.960014500819762)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123304200064
+INFO:robot:[25] Current Location: (4.191495203797718, 7.285339746717846, 4.695881380066331)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914123166678213
+INFO:robot:[26] Current Location: (4.878853428010681, 6.571602271802365, 5.5141013472164975)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.914124191807
+INFO:robot:[27] Current Location: (4.418755903229845, 5.73019485374889, 4.1169633954186615)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91404588823432
+INFO:robot:[28] Current Location: (4.090742828424751, 4.785873567241367, 4.381096516172096)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91333428693465
+INFO:robot:[29] Current Location: (5.082600637477434, 4.711899261530503, 6.25787085439182)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91358787231662
+INFO:robot:[30] Current Location: (5.313693946444875, 3.781172632484495, 4.860732902593983)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.91950357195566
+INFO:robot:[31] Current Location: (4.726124679876499, 2.9832723451827396, 4.042512935443818)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.912845087742422
+INFO:robot:[32] Current Location: (5.63710015941949, 2.5840508691126156, 5.919287273663538)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.929918843743234
+INFO:robot:[33] Current Location: (6.204083029475062, 3.357476108245922, 1.0332399182817884)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.96030714547817
+INFO:robot:[34] Current Location: (6.476930426105135, 4.319187898517055, 1.297373039035219)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.96752574865008
+INFO:robot:[35] Current Location: (6.986201087542903, 5.179408023132292, 1.033239918281785)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.96460427240139
+INFO:robot:[36] Current Location: (6.745348375984452, 6.140590879214768, 1.8514598854319513)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.959281014979087
+INFO:robot:[37] Current Location: (7.563234073934084, 6.641309523319729, 0.45432193363411444)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.96033128956792
+INFO:robot:[38] Current Location: (7.386232592780904, 7.583820346140584, 1.8514598854319513)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.959403831827846
+INFO:robot:[39] Current Location: (6.520008078030213, 8.065003888603183, 2.6696798525821173)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.959227489329837
+INFO:robot:[40] Current Location: (5.872950548522013, 7.35720961837234, 4.066817804379953)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.960332876435928
+INFO:robot:[41] Current Location: (6.793359042936407, 6.980245011686221, 5.9435921425996705)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95859156091931
+INFO:robot:[42] Current Location: (7.341378306911667, 7.767220908252869, 1.0575447872179211)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95779988440269
+INFO:robot:[43] Current Location: (7.606601308649093, 6.904498154169434, 4.785342029914764)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.957730255032715
+INFO:robot:[44] Current Location: (6.908397224583217, 7.476463929419709, 2.2299539654320215)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95761417582085
+INFO:robot:[45] Current Location: (6.771422694436542, 6.584347474490748, 4.785342029914764)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.957294957788232
+INFO:robot:[46] Current Location: (7.379050553949551, 7.251747036528032, 1.0575447872179193)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956299771548267
+INFO:robot:[47] Current Location: (6.5036607943112354, 7.031914009472744, 3.612932851700661)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95680212280881
+INFO:robot:[48] Current Location: (7.354513349128741, 6.730776630483613, 6.1683209161834025)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.957087429896575
+INFO:robot:[49] Current Location: (7.213767957282259, 7.715380533562498, 1.761909947223531)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.957028305445768
+INFO:robot:[50] Current Location: (6.689053925094184, 6.981003943869681, 4.3172980117062725)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956949073587086
+INFO:robot:[51] Current Location: (7.532424537187737, 7.302500136259056, 0.5895007690094278)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956662132587116
+INFO:robot:[52] Current Location: (6.652005020328358, 7.5012342938591425, 3.14488883349217)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95697258404039
+INFO:robot:[53] Current Location: (7.275494863929739, 6.848628589019043, 5.700276897974912)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956989484081753
+INFO:robot:[54] Current Location: (7.117122556445267, 7.737195977170309, 1.9724796552780681)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.95701765821776
+INFO:robot:[55] Current Location: (6.757495644863866, 6.909366118122967, 4.52786771976081)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.957297511713264
+INFO:robot:[56] Current Location: (7.51503969411552, 7.400039945127551, 0.8000704770639651)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956889006219836
+INFO:robot:[57] Current Location: (6.612528059225159, 7.410361764320204, 3.355458541546707)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956615756759955
+INFO:robot:[58] Current Location: (7.358651980383459, 6.902490830578882, 5.910846606029448)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956666958633864
+INFO:robot:[59] Current Location: (7.018052059887933, 7.738329023785175, 2.1830493633326036)
+INFO:robot:Current predicted max and value: [2.42424242 2.02020202] 	 25.956428321966463
+INFO:robot:Environment seed: 1
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 30.853928637450842 at location [1.05263158 4.73684211]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:[1] Current Location: (1.70229411056308, 1.6990461313535299, 0.8182199671501653)
+INFO:robot:Current predicted max and value: [0.80808081 0.90909091] 	 13.581816113403512
+INFO:robot:[2] Current Location: (2.23177360084715, 0.8570808228920032, 5.224630936110032)
+INFO:robot:Current predicted max and value: [1.71717172 2.32323232] 	 18.67247837044054
+INFO:robot:[3] Current Location: (3.1624577328242256, 1.0883452212566092, 0.3385835807282813)
+INFO:robot:Current predicted max and value: [0.70707071 1.61616162] 	 20.56526815752523
+INFO:robot:[4] Current Location: (4.057069018483459, 0.6622546686001831, 5.803548920757702)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 20.364224589996194
+INFO:robot:[5] Current Location: (5.002697675428439, 0.9583441055214581, 0.3385835807282813)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.909295029414693
+INFO:robot:[6] Current Location: (5.897308961087671, 0.5322535528650321, 5.803548920757702)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.76513498255175
+INFO:robot:[7] Current Location: (6.842937618032652, 0.828342989786307, 0.3385835807282813)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.7025514308748
+INFO:robot:[8] Current Location: (7.737548903691884, 0.402252437129881, 5.803548920757702)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.698611164483058
+INFO:robot:[9] Current Location: (8.683177560636864, 0.698341874051156, 0.3385835807282813)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.74171701544808
+INFO:robot:[10] Current Location: (9.508411394704073, 1.262544309800108, 0.602716701481719)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.72061659969067
+INFO:robot:[11] Current Location: (8.754933750926568, 1.9117943014148127, 2.479491039701439)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.711981701089364
+INFO:robot:[12] Current Location: (9.122556697277464, 2.7975197356105084, 1.0823530879036032)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.725692396925613
+INFO:robot:[13] Current Location: (8.834806647145268, 3.74571930328645, 1.9005730550537685)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.714484236962353
+INFO:robot:[14] Current Location: (9.268759283742652, 4.636543427725221, 1.0823530879036027)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.714087580257015
+INFO:robot:[15] Current Location: (8.981009233610454, 5.584742995401163, 1.900573055053769)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.713577891735735
+INFO:robot:[16] Current Location: (9.414961870207836, 6.475567119839934, 1.082353087903603)
+INFO:robot:Current predicted max and value: [0.70707071 1.51515152] 	 19.713581271835103
+INFO:robot:[17] Current Location: (9.127211820075638, 7.423766687515876, 1.9005730550537692)
+INFO:robot:Current predicted max and value: [8.98989899 7.27272727] 	 21.35997130994347
+INFO:robot:[18] Current Location: (9.561164456673021, 8.314590811954647, 1.082353087903603)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.809874370762003
+INFO:robot:[19] Current Location: (8.864162545710554, 8.973259553872415, 2.479491039701439)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.74951463798326
+INFO:robot:[20] Current Location: (7.94379397071262, 9.363460727051825, 2.7436241604548695)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.7137381944913
+INFO:robot:[21] Current Location: (7.0254711947722335, 8.991216464932089, 3.5618441276050348)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.720228535711254
+INFO:robot:[22] Current Location: (6.099082372008238, 9.342907039940664, 2.7436241604548695)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.709617450741572
+INFO:robot:[23] Current Location: (5.180759596067851, 8.970662777820928, 3.5618441276050348)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.706129017234474
+INFO:robot:[24] Current Location: (4.824778517082911, 8.045914172579135, 4.3800640947552)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.705385945761066
+INFO:robot:[25] Current Location: (5.256459787228727, 7.153987161833738, 5.198284061905365)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.70526976535218
+INFO:robot:[26] Current Location: (4.2878231799654065, 6.928161489348087, 3.321509723685646)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.705887895661117
+INFO:robot:[27] Current Location: (3.7219580193403576, 6.114724871360728, 4.139729690835811)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.706814447983913
+INFO:robot:[28] Current Location: (2.8069358670238835, 6.401762562674941, 2.7425917390379753)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.70684878037533
+INFO:robot:[29] Current Location: (2.213158403866415, 5.64871243173335, 4.139729690835811)
+INFO:robot:Current predicted max and value: [9.09090909 7.27272727] 	 20.706445029282992
+INFO:robot:[30] Current Location: (1.9067271709493943, 4.697168860010399, 4.403862811589247)
+INFO:robot:Current predicted max and value: [2.02020202 4.34343434] 	 25.152444714238626
+INFO:robot:[31] Current Location: (0.9485010730623261, 4.735364681679653, 3.0067248597914107)
+INFO:robot:Current predicted max and value: [1.31313131 4.34343434] 	 36.206599759958316
+INFO:robot:[32] Current Location: (0.34657767175216625, 5.522492835443151, 2.1885048926412454)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.49397254837021
+INFO:robot:[33] Current Location: (0.5096987179789011, 6.499874048568214, 1.3702849254910798)
+INFO:robot:Current predicted max and value: [1.31313131 4.34343434] 	 36.69690196527644
+INFO:robot:[34] Current Location: (0.4491567252942491, 7.497706668057117, 1.6344180462445157)
+INFO:robot:Current predicted max and value: [1.31313131 4.34343434] 	 36.70572282446677
+INFO:robot:[35] Current Location: (0.6452991530840695, 8.477943076998875, 1.3702849254910783)
+INFO:robot:Current predicted max and value: [1.31313131 4.34343434] 	 36.71139503487695
+INFO:robot:[36] Current Location: (0.584757160399419, 9.475775696487778, 1.6344180462445053)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.72142164490193
+INFO:robot:[37] Current Location: (1.5608596402462207, 9.284783392660852, 6.04082901520437)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.71946874966151
+INFO:robot:[38] Current Location: (2.560351421107631, 9.303530376012937, 0.021776828778214963)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.724128527464565
+INFO:robot:[39] Current Location: (2.8350014548450257, 8.38471399912748, 4.907824184159965)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.74650738307625
+INFO:robot:[40] Current Location: (2.2856438226984195, 7.560039091364308, 4.0896042170098)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.84255332208645
+INFO:robot:[41] Current Location: (1.6516443830644738, 8.326393331796261, 2.21282987879008)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.76219960382071
+INFO:robot:[42] Current Location: (1.0325128730907456, 7.547978092581454, 4.0896042170098)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.68978831667647
+INFO:robot:[43] Current Location: (0.6787899220186419, 6.6129832566175555, 4.3537373377632305)
+INFO:robot:Current predicted max and value: [1.21212121 4.34343434] 	 36.694400333219676
+INFO:robot:[44] Current Location: (0.5814358594263896, 5.618067453199448, 4.617870458516663)
+INFO:robot:Current predicted max and value: [1.31313131 4.34343434] 	 36.43322057257712
+INFO:robot:[45] Current Location: (1.211080754116006, 4.852933596881988, 5.436090425666828)
+INFO:robot:Current predicted max and value: [1.31313131 4.44444444] 	 34.96717135724855
+INFO:robot:[46] Current Location: (1.1522767256282729, 3.8637801215681025, 4.617870458516663)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.78832251650379
+INFO:robot:[47] Current Location: (0.3900698137031028, 3.230595207893258, 3.7996504913664966)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.759115801712085
+INFO:robot:[48] Current Location: (0.7541080887589078, 2.343390434597228, 5.196788443164333)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.7464026057647
+INFO:robot:[49] Current Location: (1.4877605039254502, 3.014961908830978, 0.7903774742044645)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.72666239628791
+INFO:robot:[50] Current Location: (2.4786339720599018, 3.0221925131714347, 6.255342814233885)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.71355094684063
+INFO:robot:[51] Current Location: (3.451226694486464, 3.2532740262294992, 0.23629062780773502)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.734070141927496
+INFO:robot:[52] Current Location: (4.450586376404748, 3.2284648434436085, 6.255342814233889)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.72194091621089
+INFO:robot:[53] Current Location: (4.73080455505543, 4.145598393052694, 1.3692954588521395)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.71921825580574
+INFO:robot:[54] Current Location: (5.687628049337904, 4.209979883047443, 6.255342814233889)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.715488143829965
+INFO:robot:[55] Current Location: (6.409110639158746, 4.889203987505857, 0.7903774742044689)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.716090198367404
+INFO:robot:[56] Current Location: (6.914945530779665, 4.032824881208275, 5.196788443164332)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.71517202387718
+INFO:robot:[57] Current Location: (7.13630994163036, 3.057974601933021, 4.932655322410901)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.715116217797664
+INFO:robot:[58] Current Location: (6.28969191220518, 2.6075369395233463, 3.535517370613065)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.715126564022974
+INFO:robot:[59] Current Location: (5.496929121840106, 1.998552187984446, 3.799650491366501)
+INFO:robot:Current predicted max and value: [1.31313131 4.64646465] 	 33.715170651537846
+INFO:robot:Environment seed: 2
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 30.853928637450842 at location [1.05263158 4.73684211]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:[1] Current Location: (1.965782713526778, 0.7419321413907376, 6.019052186426154)
+INFO:robot:Current predicted max and value: [0.4040404  1.21212121] 	 20.111642846630776
+INFO:robot:[2] Current Location: (1.9730277999614165, 1.736518296536056, 1.6126412174662876)
+INFO:robot:Current predicted max and value: [0.70707071 1.61616162] 	 21.538818762553948
+INFO:robot:[3] Current Location: (1.6747845668897035, 2.6906599229842723, 1.87677433821972)
+INFO:robot:Current predicted max and value: [0.70707071 1.61616162] 	 21.40271385923814
+INFO:robot:[4] Current Location: (2.4797341547160556, 3.211920257676115, 0.4796363864218838)
+INFO:robot:Current predicted max and value: [0.4040404  1.21212121] 	 20.088978508548823
+INFO:robot:[5] Current Location: (2.780203879393695, 4.156166229891019, 1.297856353572049)
+INFO:robot:Current predicted max and value: [0.4040404  1.21212121] 	 20.070553013871532
+INFO:robot:[6] Current Location: (2.296347681279416, 5.020900692624129, 2.1160763207222146)
+INFO:robot:Current predicted max and value: [0.4040404  1.21212121] 	 20.090436052113425
+INFO:robot:[7] Current Location: (2.954807650739386, 5.7180998349670045, 0.718938368924378)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.124465772272274
+INFO:robot:[8] Current Location: (2.537463672447607, 6.581511775612058, 2.1160763207222146)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.12610189958933
+INFO:robot:[9] Current Location: (2.2571966246590023, 7.54108754193704, 1.8519431999687823)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.129866908547033
+INFO:robot:[10] Current Location: (2.7339398186765695, 8.409763798346672, 1.0337232328186166)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.13265447308775
+INFO:robot:[11] Current Location: (2.069780244410766, 9.101535607092831, 2.4308611846164525)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.13323185742435
+INFO:robot:[12] Current Location: (1.169467676010264, 9.536015236735473, 2.6949943053698893)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.13322738476148
+INFO:robot:[13] Current Location: (0.5405329706789053, 8.812069581389284, 4.092132257167725)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.133165356479058
+INFO:robot:[14] Current Location: (0.7011629688778812, 7.83427588373598, 4.91035222431789)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.130563475430677
+INFO:robot:[15] Current Location: (1.1441337073176971, 6.938110611991755, 5.174485345071326)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.123337872706653
+INFO:robot:[16] Current Location: (0.430021842175599, 6.2980321640432715, 3.777347393273489)
+INFO:robot:Current predicted max and value: [0.50505051 1.31313131] 	 20.13114935929605
+INFO:robot:[17] Current Location: (0.7741838048768181, 5.402929533673708, 5.174485345071325)
+INFO:robot:Current predicted max and value: [1.41414141 4.74747475] 	 24.327582877640445
+INFO:robot:[18] Current Location: (0.46155441635735034, 4.462639484313476, 4.35626537792116)
+INFO:robot:Current predicted max and value: [1.21212121 4.74747475] 	 28.26849579979922
+INFO:robot:[19] Current Location: (0.3667158492849209, 3.4674807454230594, 4.62039849867459)
+INFO:robot:Current predicted max and value: [1.21212121 4.74747475] 	 28.979929461920108
+INFO:robot:[20] Current Location: (0.5349749920980756, 2.482075179042344, 4.884531619428023)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.491059641401073
+INFO:robot:[21] Current Location: (0.44615387984968563, 1.4863613248586858, 4.62039849867459)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.65084174330969
+INFO:robot:[22] Current Location: (0.6144130226628404, 0.5009557584779704, 4.884531619428024)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.67732111118824
+INFO:robot:[23] Current Location: (1.5188995040173279, 0.9146686013184736, 0.47812065046815544)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.701551468096667
+INFO:robot:[24] Current Location: (2.4640782814594315, 0.617146181717908, 5.943085990497576)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.79514483782306
+INFO:robot:[25] Current Location: (3.4606289110447586, 0.5382658161799365, 6.207219111251012)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.773797165680122
+INFO:robot:[26] Current Location: (4.443211847825514, 0.7222931014982359, 0.18816692482485653)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.760942043229342
+INFO:robot:[27] Current Location: (5.440221100145803, 0.6494383131720481, 6.207219111251012)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751245419498918
+INFO:robot:[28] Current Location: (6.193542577764857, 1.2931690510196128, 0.7422537712215913)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.752082471619836
+INFO:robot:[29] Current Location: (7.006122473429851, 0.7838851531532722, 5.628301126603342)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75296925222935
+INFO:robot:[30] Current Location: (7.988891109517299, 0.910567114831886, 0.16333578657392067)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.752623552502925
+INFO:robot:[31] Current Location: (8.983784125523442, 0.8129804554131147, 6.182387973000075)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751295051886483
+INFO:robot:[32] Current Location: (9.330106912166082, 1.7072492645062993, 1.296340617618326)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751284778691613
+INFO:robot:[33] Current Location: (8.847561978484437, 2.572716131850221, 2.114560584768493)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75106662912455
+INFO:robot:[34] Current Location: (9.507077960955625, 3.2689164222336213, 0.7174226329706568)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751111645871124
+INFO:robot:[35] Current Location: (9.091043166098553, 4.132959954084361, 2.1145605847684927)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75115403689908
+INFO:robot:[36] Current Location: (9.3259243966039, 5.095619457256806, 1.2963406176183279)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751157169243474
+INFO:robot:[37] Current Location: (8.843379462922256, 5.961086324600728, 2.114560584768493)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751134295884384
+INFO:robot:[38] Current Location: (9.502895445393444, 6.6572866149841285, 0.7174226329706568)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751127404887118
+INFO:robot:[39] Current Location: (9.572491711148315, 7.6457393813239785, 1.535642600120823)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75113435329548
+INFO:robot:[40] Current Location: (8.898560641129562, 8.372168610055382, 2.3538625672709883)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751134788734145
+INFO:robot:[41] Current Location: (8.400150056739516, 9.238726258894909, 2.0897294465175613)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.751134824032274
+INFO:robot:[42] Current Location: (7.47103417529815, 9.00123972386966, 3.4868673983153973)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75113456822554
+INFO:robot:[43] Current Location: (6.573591895696088, 9.421334792008503, 2.6686474311652315)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75111662459408
+INFO:robot:[44] Current Location: (5.925803969201702, 8.714208934927198, 4.065785382963068)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.75064406175018
+INFO:robot:[45] Current Location: (5.549912972338386, 7.787903786570881, 4.329918503716504)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.743193839674184
+INFO:robot:[46] Current Location: (4.751734276771282, 8.381338602896136, 2.453144165496781)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.73736259865138
+INFO:robot:[47] Current Location: (4.653531655376558, 9.367360284525464, 1.634924198346616)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.741828586869048
+INFO:robot:[48] Current Location: (3.7145387300621695, 9.56216393355287, 3.0320621501444522)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.732933589912562
+INFO:robot:[49] Current Location: (3.86053386138386, 8.578324753140464, 4.908836488364171)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.711179762539306
+INFO:robot:[50] Current Location: (3.795937294471578, 7.5807464088799925, 4.644703367610741)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.592948179298762
+INFO:robot:[51] Current Location: (4.445883832612747, 6.832781162996045, 5.462923334760907)
+INFO:robot:Current predicted max and value: [1.21212121 4.74747475] 	 29.506103954296297
+INFO:robot:[52] Current Location: (4.915844917912973, 5.950470646398997, 5.198790214007476)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.567221798211502
+INFO:robot:[53] Current Location: (5.862101900644331, 5.6563954279189765, 6.017010181157643)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.632806700077403
+INFO:robot:[54] Current Location: (5.8645100722730605, 4.697411394592939, 4.619872229359807)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.658055006121195
+INFO:robot:[55] Current Location: (5.5183222036955915, 3.7596005239777046, 4.355739108606375)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.65627956804304
+INFO:robot:[56] Current Location: (6.507985552878605, 3.660501752198971, 6.232513446826095)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.635038224456817
+INFO:robot:[57] Current Location: (7.244785049453833, 4.323079304896325, 0.7675481067966743)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.632499782629488
+INFO:robot:[58] Current Location: (7.264767983320984, 5.313777641346925, 1.5857680739468396)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.626697511595104
+INFO:robot:[59] Current Location: (6.992270133133437, 6.275588532862238, 1.8499011947002701)
+INFO:robot:Current predicted max and value: [1.21212121 4.64646465] 	 29.630342756348778
+INFO:robot:Environment seed: 3
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 22.828366764520577 at location [1.05263158 3.15789474]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:[1] Current Location: (0.7473346760135438, 1.961984586851064, 1.8767743382197173)
+INFO:robot:Current predicted max and value: [1.21212121 1.61616162] 	 11.370957896681038
+INFO:robot:[2] Current Location: (1.202362897490721, 2.842229910128184, 1.0585543710695517)
+INFO:robot:Current predicted max and value: [1.51515152 2.62626263] 	 18.784076636937407
+INFO:robot:[3] Current Location: (0.9372581342230589, 3.79700840589813, 1.876774338219717)
+INFO:robot:Current predicted max and value: [1.21212121 3.33333333] 	 23.019604857431446
+INFO:robot:[4] Current Location: (0.8924206934215265, 4.795669946810108, 1.6126412174662865)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.977466973196528
+INFO:robot:[5] Current Location: (1.8641328557735286, 4.583468191818805, 6.0190521864261495)
+INFO:robot:Current predicted max and value: [1.01010101 3.23232323] 	 23.072710602996672
+INFO:robot:[6] Current Location: (2.7245725889705077, 5.07492111634753, 0.5540868463967286)
+INFO:robot:Current predicted max and value: [1.01010101 3.23232323] 	 23.04620574453252
+INFO:robot:[7] Current Location: (3.689605343318505, 4.8499893610806435, 6.0190521864261495)
+INFO:robot:Current predicted max and value: [1.01010101 3.23232323] 	 22.977328141647597
+INFO:robot:[8] Current Location: (4.5500450765154845, 5.341442285609367, 0.5540868463967277)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96425618786344
+INFO:robot:[9] Current Location: (5.253016066270126, 4.689147901892746, 5.440134201778477)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.967014378590136
+INFO:robot:[10] Current Location: (6.1127190844019434, 5.114079538841457, 0.5540868463967268)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96877459555701
+INFO:robot:[11] Current Location: (7.07775183874994, 4.889147783574569, 6.019052186426148)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96848642280687
+INFO:robot:[12] Current Location: (7.93819157194692, 5.380600708103292, 0.5540868463967268)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968299329415583
+INFO:robot:[13] Current Location: (8.903224326294916, 5.155668952836404, 6.019052186426148)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968168131646596
+INFO:robot:[14] Current Location: (8.910469412729562, 6.150255107981723, 1.6126412174662743)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968376416067805
+INFO:robot:[15] Current Location: (9.57952477546097, 6.881177424710573, 0.794421250316109)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968337725166833
+INFO:robot:[16] Current Location: (9.098258226013211, 7.7106583972756555, 2.191559202113945)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968302768308
+INFO:robot:[17] Current Location: (9.258393291321953, 8.688533272886277, 1.3733392349637792)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968258384281395
+INFO:robot:[18] Current Location: (8.710704181280459, 9.514317233879636, 2.1915592021139454)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96827646274528
+INFO:robot:[19] Current Location: (7.810542702678824, 9.183612701242744, 3.5886971539117813)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968282243506206
+INFO:robot:[20] Current Location: (6.875045041076309, 9.510303130591616, 2.7704771867616156)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968282867427874
+INFO:robot:[21] Current Location: (6.30249484178447, 8.740990161276954, 4.1676151385594515)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968284019343116
+INFO:robot:[22] Current Location: (5.379825288964734, 9.0024037641447, 2.7704771867616147)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968287443343407
+INFO:robot:[23] Current Location: (4.386200135601798, 9.112150399622955, 3.034610307515049)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96828707388101
+INFO:robot:[24] Current Location: (3.4534950222204954, 9.471867567501675, 2.7704771867616156)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968288034913165
+INFO:robot:[25] Current Location: (2.545498004477182, 9.075100725059956, 3.588697153911782)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968300175322852
+INFO:robot:[26] Current Location: (1.6100003428746668, 9.401791154408828, 2.7704771867616156)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.968317902901138
+INFO:robot:[27] Current Location: (0.7020033251313533, 9.005024311967109, 3.588697153911782)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96830012754989
+INFO:robot:[28] Current Location: (0.37097989911112156, 8.071051077383936, 4.406917121061948)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.966302123023382
+INFO:robot:[29] Current Location: (1.1761932208303492, 7.5501982363714735, 5.804055072859784)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.96851741589521
+INFO:robot:[30] Current Location: (1.9142539325012542, 6.8759566956146365, 5.539921952106353)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.97254059707093
+INFO:robot:[31] Current Location: (2.7273475787632155, 7.384419966533289, 0.6538745967246031)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.9817167806276
+INFO:robot:[32] Current Location: (3.709987817961467, 7.256745882239225, 6.118839936754024)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.983886016085485
+INFO:robot:[33] Current Location: (4.704978848839296, 7.353328064172491, 0.09978775032786658)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984676171514455
+INFO:robot:[34] Current Location: (5.4734198107450975, 6.727723556869985, 5.5647530903572875)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.9845050523852
+INFO:robot:[35] Current Location: (6.273638374697296, 7.25621804631254, 0.6787057349755372)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.9842033723316
+INFO:robot:[36] Current Location: (7.259145655690797, 7.1529808892385365, 6.143671075004958)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984459302343602
+INFO:robot:[37] Current Location: (7.3826757923981114, 6.201983265272031, 4.746533123207122)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984656721694687
+INFO:robot:[38] Current Location: (7.157727765785018, 5.227953668844289, 4.482400002453687)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984638142340426
+INFO:robot:[39] Current Location: (7.18883402911231, 4.2287701672910805, 4.746533123207122)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.98468112245516
+INFO:robot:[40] Current Location: (6.963886002499216, 3.254740570863338, 4.482400002453687)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984745734275677
+INFO:robot:[41] Current Location: (7.806084644595163, 2.7960929689764322, 5.879537954251523)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984863179966833
+INFO:robot:[42] Current Location: (8.177370585567575, 1.8773823172867092, 5.061317987101358)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984868356161506
+INFO:robot:[43] Current Location: (8.265046995060882, 0.8815670148271225, 4.797184866347926)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984869258987935
+INFO:robot:[44] Current Location: (7.365351241002521, 0.5495975499749717, 3.40004691455009)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984869852311945
+INFO:robot:[45] Current Location: (6.365687188473728, 0.5522530115218361, 3.135913793796663)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.9848667418473
+INFO:robot:[46] Current Location: (5.667374165810799, 1.2552760793306306, 2.3176938266464973)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.984857515131743
+INFO:robot:[47] Current Location: (4.677299692684999, 1.2957118204094626, 3.1359137937966626)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.98472214663912
+INFO:robot:[48] Current Location: (3.971047142758686, 0.6006651693028586, 3.954133760946828)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.98553551716231
+INFO:robot:[49] Current Location: (3.1247068772811, 1.0516245139185294, 2.556995809148992)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 23.00729592124371
+INFO:robot:[50] Current Location: (3.42264698439266, 1.9631550224804855, 1.1598578573511553)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.95999288114496
+INFO:robot:[51] Current Location: (3.0623443220678577, 2.8862284231445843, 1.9780778245013206)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.940362461428876
+INFO:robot:[52] Current Location: (4.045724022347038, 3.03528705712136, 0.10130348628160113)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.983499453195584
+INFO:robot:[53] Current Location: (5.032653831426962, 2.876212164873144, 6.120355672707755)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.995227185078225
+INFO:robot:[54] Current Location: (4.939278971707965, 3.866431962118508, 1.713944703747888)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.9910972501929
+INFO:robot:[55] Current Location: (3.9878387022381663, 3.9865052276529487, 3.111082655545724)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.98884854614555
+INFO:robot:[56] Current Location: (4.211040842731816, 3.0172607199237347, 4.987856993765441)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.995243814412895
+INFO:robot:[57] Current Location: (3.216600699531354, 2.998742813032373, 3.1110826555457183)
+INFO:robot:Current predicted max and value: [1.11111111 3.23232323] 	 22.99927751714206
+INFO:robot:[58] Current Location: (2.2433950270018777, 2.7702565150826572, 3.375215776299149)
+INFO:robot:Current predicted max and value: [1.01010101 3.23232323] 	 23.433898804640446
+INFO:robot:[59] Current Location: (1.7816897887325145, 3.6107828076038944, 1.9780778245013122)
+INFO:robot:Current predicted max and value: [1.01010101 3.23232323] 	 23.488342695423988
+INFO:robot:Environment seed: 4
+WARNING:robot:Generating environemnt for time 0
+WARNING:robot:Current environment in violation of boundary constraint. Regenerating!
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:GP:initializing Y
+INFO:GP:initializing inference method
+INFO:GP:adding kernel and likelihood as parameters
+INFO:robot:Environment initialized with bounds X1: (0.0, 10.0)  X2: (0.0, 10.0)
+INFO:robot:World max value 22.828366764520577 at location [1.05263158 3.15789474]
+INFO:robot:[0] Current Location: (1.0, 1.0, 0.0)
+INFO:robot:Current predicted max and value: [0. 0.] 	 0.0
+INFO:robot:[1] Current Location: (1.965782713526778, 0.7419321413907376, 6.019052186426154)
+INFO:robot:Current predicted max and value: [1.01010101 1.01010101] 	 7.562124095444709
+INFO:robot:[2] Current Location: (1.9730277999614165, 1.736518296536056, 1.6126412174662876)
+INFO:robot:Current predicted max and value: [1.01010101 1.21212121] 	 7.9522472927225
+INFO:robot:[3] Current Location: (2.8861478429928162, 2.029550653928889, 0.21550326566845102)
+INFO:robot:Current predicted max and value: [1.11111111 1.51515152] 	 10.064913648039969
+INFO:robot:[4] Current Location: (3.4227137367277294, 2.8626050058005887, 1.0337232328186163)
+INFO:robot:Current predicted max and value: [3.73737374 2.82828283] 	 17.779749379815506
+INFO:robot:[5] Current Location: (4.347368992173955, 2.6083043293552794, 5.919770588200366)
+INFO:robot:Current predicted max and value: [3.33333333 3.23232323] 	 18.361145903676665
+INFO:robot:[6] Current Location: (5.158340076712568, 2.02378643447388, 5.655637467446936)
+INFO:robot:Current predicted max and value: [3.33333333 3.23232323] 	 18.340539867860894
+INFO:robot:[7] Current Location: (5.518655524646127, 2.9508392319264476, 1.2492264984870651)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.970406834356428
+INFO:robot:[8] Current Location: (6.068736656372637, 3.78555236702904, 0.9850933777336365)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.745004658820115
+INFO:robot:[9] Current Location: (5.438989755571799, 4.508791619556589, 2.3822313295314723)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.567935335076545
+INFO:robot:[10] Current Location: (5.890884965007698, 5.354632559186346, 0.9850933777336359)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.46592381851115
+INFO:robot:[11] Current Location: (5.696571110728568, 6.326293321760977, 1.8033133448838021)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.371297876772175
+INFO:robot:[12] Current Location: (6.214977652086667, 7.17076781478552, 0.9850933777336366)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.316578813316912
+INFO:robot:[13] Current Location: (6.0206637978075355, 8.14242857736015, 1.8033133448838028)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.28214938930882
+INFO:robot:[14] Current Location: (5.54699774771079, 9.022755642932976, 2.0674464656372384)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.27004076239919
+INFO:robot:[15] Current Location: (4.597776565711016, 9.307117488360376, 2.8856664327874038)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.265146587585264
+INFO:robot:[16] Current Location: (3.7413990687454515, 8.80861965066906, 3.70388639993757)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.26408180885249
+INFO:robot:[17] Current Location: (3.0330984978809834, 9.455122919630583, 2.3067484481397345)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.26111344114109
+INFO:robot:[18] Current Location: (2.1769117637472504, 9.023150175399794, 3.7038863999375704)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.261283225465718
+INFO:robot:[19] Current Location: (1.210065536553076, 9.24015451741238, 2.8856664327874046)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.26145255953941
+INFO:robot:[20] Current Location: (0.7297303398920909, 8.410133870492366, 4.282804384585241)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.261942720555368
+INFO:robot:[21] Current Location: (0.562107941913762, 7.424619790892125, 4.546937505338671)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.261997528157835
+INFO:robot:[22] Current Location: (0.6575895008123078, 6.429522538707888, 4.811070626092105)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.262064699239037
+INFO:robot:[23] Current Location: (1.42242582720876, 5.799516264678569, 5.6292905932422705)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.26326491467118
+INFO:robot:[24] Current Location: (1.0620842395042687, 4.910803647667045, 4.232152641444435)
+INFO:robot:Current predicted max and value: [3.33333333 3.43434343] 	 19.318024184813
+INFO:robot:[25] Current Location: (0.3870267390067863, 4.173489169024174, 3.9680195206910005)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.264355156952778
+INFO:robot:[26] Current Location: (1.2657638899519368, 3.7075759465964433, 5.8447938589107205)
+INFO:robot:Current predicted max and value: [3.23232323 3.43434343] 	 19.57516843101764
+INFO:robot:[27] Current Location: (2.1983796068617205, 4.0424049119873935, 0.3798285188813004)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.19067545731769
+INFO:robot:[28] Current Location: (2.5914407781868447, 4.952012204772827, 1.1980484860314666)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.29194441822052
+INFO:robot:[29] Current Location: (2.7028092345286696, 5.9454568868394, 1.4621816067848954)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.324157549214455
+INFO:robot:[30] Current Location: (3.473865625802806, 6.567835029906162, 0.6439616396347303)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.32571892777458
+INFO:robot:[31] Current Location: (3.8493483138980062, 5.646820989717308, 5.050372608594595)
+INFO:robot:Current predicted max and value: [4.64646465 1.91919192] 	 19.33568197501571
+INFO:robot:[32] Current Location: (3.9261201137903785, 4.650105704324533, 4.786239487841162)
+INFO:robot:Current predicted max and value: [3.43434343 3.43434343] 	 20.409620196169207
+INFO:robot:[33] Current Location: (4.25474328364778, 3.7059965572302, 5.050372608594596)
+INFO:robot:Current predicted max and value: [3.33333333 3.43434343] 	 20.23636976871306
+INFO:robot:[34] Current Location: (4.331515083540155, 2.709281271837425, 4.786239487841166)
+INFO:robot:Current predicted max and value: [4.54545455 1.91919192] 	 20.316847239667066
+INFO:robot:[35] Current Location: (4.145409372246071, 1.7270898782597581, 4.522106367087734)
+INFO:robot:Current predicted max and value: [3.33333333 3.43434343] 	 19.769574118371402
+INFO:robot:[36] Current Location: (4.699008905184395, 0.90525652007673, 5.340326334237901)
+INFO:robot:Current predicted max and value: [3.33333333 3.43434343] 	 19.571404094457176
+INFO:robot:[37] Current Location: (5.677287204125328, 0.7476047477645906, 6.158546301388066)
+INFO:robot:Current predicted max and value: [5.45454545 0.4040404 ] 	 24.621725202059594
+INFO:robot:[38] Current Location: (6.667660069186139, 0.8836079004690623, 0.13949411496191377)
+INFO:robot:Current predicted max and value: [5.45454545 0.4040404 ] 	 24.352782683102742
+INFO:robot:[39] Current Location: (7.6599439287282225, 0.7623313096257206, 6.158546301388068)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.149894066351056
+INFO:robot:[40] Current Location: (8.586152583301512, 0.38620261145466606, 5.894413180634634)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.087865793173563
+INFO:robot:[41] Current Location: (9.17219632799745, 1.145286865518489, 1.0083658252528833)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.072631440961135
+INFO:robot:[42] Current Location: (8.955324209257252, 2.1121627601425415, 1.8265857924030495)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.05378234418408
+INFO:robot:[43] Current Location: (9.453939156357691, 2.9684720769317208, 1.0083658252528844)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.06497164308255
+INFO:robot:[44] Current Location: (8.807532757223457, 3.67686105385272, 2.405503777050721)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.064332930542143
+INFO:robot:[45] Current Location: (8.756398244435255, 4.666440647970262, 1.5872838099005553)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.073882104238383
+INFO:robot:[46] Current Location: (9.443770826917723, 5.380164295009721, 0.7690638427503895)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075231228372328
+INFO:robot:[47] Current Location: (8.983690229001983, 6.221580968772704, 2.1662017945482255)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075951795737208
+INFO:robot:[48] Current Location: (9.606390355937073, 6.950896214314636, 0.7690638427503884)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075474353143733
+INFO:robot:[49] Current Location: (9.146309758021333, 7.7923128880776185, 2.1662017945482246)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075601623687582
+INFO:robot:[50] Current Location: (9.331187057333645, 8.765813219711312, 1.3479818273980582)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075157048413445
+INFO:robot:[51] Current Location: (8.804611515887643, 9.605218193870254, 2.1662017945482237)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075420634856844
+INFO:robot:[52] Current Location: (7.896354511877672, 9.297443292145475, 3.5633397463460588)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075516231290173
+INFO:robot:[53] Current Location: (6.9694407304027495, 9.647747949841863, 2.7451197791958943)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075700280427135
+INFO:robot:[54] Current Location: (7.289771157519233, 8.803933865740815, 5.300507843678636)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.07595863188698
+INFO:robot:[55] Current Location: (8.040293232232722, 8.1435916175376, 5.564640964432072)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075505538603426
+INFO:robot:[56] Current Location: (7.6232894932358795, 7.280015299469811, 4.167503012634236)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.07615042634008
+INFO:robot:[57] Current Location: (7.857090751623558, 6.317092933404789, 4.985722979784402)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.075342825890157
+INFO:robot:[58] Current Location: (7.373575319075757, 5.4521678857965945, 4.167503012634237)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.06409881518719
+INFO:robot:[59] Current Location: (7.607376577463436, 4.489245519731572, 4.985722979784402)
+INFO:robot:Current predicted max and value: [5.45454545 0.50505051] 	 24.031661222216062

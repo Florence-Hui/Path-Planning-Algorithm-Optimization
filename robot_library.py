@@ -324,7 +324,7 @@ class Robot(object):
                     t=t,
                     T = T
                 )
-                self.eval.horizon_history.append(adaptive_H)
+                self.eval.horizon_history.append(self.scheduler.last_H_raw)
                 print("Adaptive Horizon at time {}: {}".format(t, adaptive_H))
                 
                 mcts = mctslib.cMCTS(self.comp_budget, self.GP, self.loc, adaptive_H, self.path_generator, self.aquisition_function, self.f_rew, t, aq_param = param, use_cost = self.use_cost, tree_type = self.tree_type)
