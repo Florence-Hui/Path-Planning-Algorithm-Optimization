@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class HorizonScheduler:
     """
     HorizonScheduler implements an adaptive planning horizon strategy for
@@ -32,11 +31,12 @@ class HorizonScheduler:
         Larger gamma results in faster horizon growth.
     """
 
-    def __init__(self, H_min, H_max, mode="decreasing", gamma=1.0, beta = 2.0):
+    def __init__(self, H_min, H_max, mode="decreasing", gamma=1.0, beta = 2.0, robot = None):
         self.H_min = H_min
         self.H_max = H_max
         self.mode = mode
         self.gamma = gamma
+        self.robot = robot
 
         # Store initial uncertainty for normalization
         self.U0 = None
@@ -102,9 +102,9 @@ class HorizonScheduler:
 
         # setting the threshold for switching the phase from exploration to exploitation
         threshold_high = 0.05 * self.U0
-        threshold_low = 0.01 * self.U0
-        if (not self.locked) and (slope < threshold_low or t > 0.6 * T):
-            self.locked = True
+        #threshold_low = 0.01 * self.U0
+        #if (not self.locked) and (slope < threshold_low or t > 0.6 * T):
+        #    self.locked = True
         print("time:", t)
         print("uncertainty:", U_t)
 
@@ -112,19 +112,52 @@ class HorizonScheduler:
         if self.U0 is None:
             self.U0 = U_t
 
-        ratio = U_t / self.U0
-        confidence = ratio
-        if (not self.locked) and (slope < threshold_low) and (confidence < 0.3):
-            self.locked = True
-        #setting a threshold for phase switching from exploration to exploitation
-        if not self.locked:
+        ratio = U_t / (self.U0 + 1e-6)
 
-            if self.phase == 'exploration':
-                if slope < threshold_low:
-                   self.phase = 'exploitation'
-            elif self.phase == 'exploitation':
-                if slope > threshold_high:
-                    self.phase = 'exploration'
+        
+        #confidence = ratio
+        #if (not self.locked) and (slope < threshold_low) and (confidence < 0.3):
+        #    self.locked = True
+        #setting a threshold for phase switching from exploration to exploitation
+        #if not self.locked:
+
+        #    if self.phase == 'exploration':
+        #        if slope < threshold_low:
+        #           self.phase = 'exploitation'
+        #    elif self.phase == 'exploitation':
+        #        if slope > threshold_high:
+        #            self.phase = 'exploration'
+
+        #phase switching based on reward
+        pred_loc, pred_val = self.robot.predict_max()
+        current_max = self.robot.current_max
+
+        confidence_raw = current_max / (pred_val + 1e-6)
+        if not hasattr(self, 'conf_window'):
+            self.conf_window = []
+        
+        self.conf_window.append(confidence_raw)
+        if len(self.conf_window) > 5:
+            self.conf_window.pop(0)
+
+        confidence = np.mean(self.conf_window)
+        if confidence < 0.6:
+            self.phase = 'exploration'
+        if confidence > 0.8:
+            self.phase = 'exploitation'
+
+        #New confidence lock logic
+        if confidence > 0.85:
+            self.conf_history.append(confidence)
+        else:
+            self.conf_history = []
+        if t > 0.5 * T and len(self.conf_history) > 5:
+            self.locked = True
+        if self.locked and confidence < 0.7:
+            self.locked = False
+
+        
+        gamma_exploit = 1.0
 
         if self.phase == 'exploration':
             if self.mode == "decreasing":
@@ -135,9 +168,16 @@ class HorizonScheduler:
 
             elif self.mode == "exp":
                 scale = np.exp(-self.gamma * ratio)
+        #New phase switching based on reward
+        else:
+            if self.locked: #strong exploitation
+                scale = 0.6 + 0.2 * np.exp(-gamma_exploit * ratio)
+            else: #normal exploitation
+                scale = 0.6 + 0.4 * np.exp(-gamma_exploit * ratio)
 
-        if self.phase == 'exploitation' and t % 10 == 0:
-            scale = np.exp(-self.gamma * ratio)
+
+        #if self.phase == 'exploitation' and t % 10 == 0:
+        #    scale = np.exp(-self.gamma * ratio)
 
 
         #if self.mode == "decreasing":
@@ -159,8 +199,8 @@ class HorizonScheduler:
         #    time_factor = 1.0 - np.sqrt(t / float(T))
 
         #    scale = ratio*time_factor
-        else:
-            scale = 0.6 + 0.2 * ratio
+        #else:
+        #    scale = 0.6 + 0.2 * ratio
         
 
         H_raw = self.H_min + (self.H_max - self.H_min) * scale

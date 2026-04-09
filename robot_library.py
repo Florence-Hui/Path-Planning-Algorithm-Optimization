@@ -157,8 +157,9 @@ class Robot(object):
         self.scheduler = HorizonScheduler(
             H_min=2,
             H_max=self.roll_length,   # original rollout_length as upper bound
-            mode = "decreasing",
-            gamma = 1
+            mode = "exp",
+            gamma = 1,
+            robot = self
         )
 
         self.eval.horizon_history = []
@@ -264,7 +265,10 @@ class Robot(object):
         elif self.dimension == 3:
             data = np.vstack([x1.ravel(), x2.ravel(), self.time * np.ones(len(x1.ravel()))]).T
         observations, var = self.GP.predict_value(data)        
-
+        idx = np.argmax(observations)
+        pred_loc = data[idx]
+        pred_val = float(observations[idx])
+        
         '''
         if t > 50:
             fig2, ax2 = plt.subplots(figsize=(8, 6))
@@ -275,9 +279,9 @@ class Robot(object):
             plot = ax2.scatter(x1, x2, observations.reshape(x1.shape), cmap = 'viridis')
             plt.show()
         '''
+        return pred_loc, pred_val
 
-
-        return data[np.argmax(observations), :], np.max(observations)
+        #return data[np.argmax(observations), :], np.max(observations)
         
     def planner(self, T):
         ''' Gather noisy samples of the environment and updates the robot's GP model  
