@@ -41,6 +41,7 @@ class HorizonScheduler:
         # Store initial uncertainty for normalization
         self.U0 = None
         self.U_history = []
+        self.ratio_U = 1.0
 
     def compute_uncertainty(self, gp_model, grid):
         """
@@ -113,6 +114,7 @@ class HorizonScheduler:
             self.U0 = U_t
 
         ratio = U_t / (self.U0 + 1e-6)
+        self.ratio_U = ratio
 
         
         #confidence = ratio

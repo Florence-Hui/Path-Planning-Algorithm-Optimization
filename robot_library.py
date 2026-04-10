@@ -95,6 +95,10 @@ class Robot(object):
         self.target = None
         self.noise = kwargs['noise']
 
+        #Initialize the Best Spatial Location
+        self.best_loc = None
+        
+
         if self.f_rew == 'hotspot_info':
             self.aquisition_function = aqlib.hotspot_info_UCB
         elif self.f_rew == 'mean':
@@ -224,10 +228,23 @@ class Robot(object):
                 poi = points
 
             if self.use_cost == False:
-                value[path] = self.aquisition_function(time = t, xvals = poi, robot_model = self.GP, param = param)
-            else:
                 reward = self.aquisition_function(time = t, xvals = poi, robot_model = self.GP, param = param)
-                value[path] = reward/cost   
+            else:
+                reward = self.aquisition_function(time = t, xvals = poi, robot_model = self.GP, param = param) / cost
+                
+
+            if hasattr(self, 'best_loc') and self.best_loc is not None:
+                if hasattr(self, 'phase') and self.phase == "exploitation":
+                    end_point = np.array(poi[-1][0:2])
+                    dist = np.linalg.norm(end_point - self.best_loc)
+                    lambda_base = 1.2
+                    lambda_stay = lambda_base * (t / float(T))* (1 - ratio_U)
+
+                    reward = reward - lambda_stay * dist
+
+            value[path] = reward
+
+
         try:
             best_key = np.random.choice([key for key in value.keys() if value[key] == max(value.values())])
             return paths[best_key], true_paths[best_key], value[best_key], paths, value, self.max_locs
@@ -308,7 +325,7 @@ class Robot(object):
 
             # If myopic planner
             if self.nonmyopic == False:
-                sampling_path, best_path, best_val, all_paths, all_values, max_locs = self.choose_trajectory(t = t)
+                sampling_path, best_path, best_val, all_paths, all_values, max_locs = self.choose_trajectory(t = t, ratio_U = ratio_U)
             else:
 
                 if self.f_rew == "naive" or self.f_rew == "naive_value":
@@ -328,11 +345,12 @@ class Robot(object):
                     t=t,
                     T = T
                 )
+                ratio_U = self.scheduler.ratio_U
                 self.eval.horizon_history.append(self.scheduler.last_H_raw)
                 print("Adaptive Horizon at time {}: {}".format(t, adaptive_H))
                 
                 mcts = mctslib.cMCTS(self.comp_budget, self.GP, self.loc, adaptive_H, self.path_generator, self.aquisition_function, self.f_rew, t, aq_param = param, use_cost = self.use_cost, tree_type = self.tree_type)
-                sampling_path, best_path, best_val, all_paths, all_values, self.max_locs, self.max_val, self.target = mcts.choose_trajectory(t = t)
+                sampling_path, best_path, best_val, all_paths, all_values, self.max_locs, self.max_val, self.target = mcts.choose_trajectory(t = t, ratio_U = ratio_U)
             
             ''' Update eval metrics '''
             # Compute distance traveled
@@ -371,6 +389,11 @@ class Robot(object):
                 raise ValueError('Only 2D or 3D worlds supported!')
             
             self.collect_observations(xlocs)
+
+            # Record best location
+            if self.GP.zvals is not None and len(self.GP.zvals) > 0:
+                idx = np.argmax(self.GP.zvals)
+                self.best_loc = self.GP.xvals[idx]
 
             # If set, learn the kernel parameters from the new data
             if t < T/3 and self.learn_params == True:

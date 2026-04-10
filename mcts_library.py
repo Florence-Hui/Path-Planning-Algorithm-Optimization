@@ -87,7 +87,7 @@ class MCTS(object):
         else:
             self.c = 1.0
 
-    def choose_trajectory(self, t):
+    def choose_trajectory(self, t, ratio_U = None):
         ''' 
         Main function loop which makes the tree and selects the best child
         Output: path to take, cost of that path
@@ -729,7 +729,7 @@ class cMCTS(MCTS):
             self.c = 1.0
         print ("Setting c to :", self.c)
 
-    def choose_trajectory(self, t):
+    def choose_trajectory(self, t, ratio_U = None):
         #Main function loop which makes the tree and selects the best child
         #Output: path to take, cost of that path
 
