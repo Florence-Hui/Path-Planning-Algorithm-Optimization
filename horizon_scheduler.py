@@ -14,7 +14,7 @@ class HorizonScheduler:
         - Reduce computational cost when uncertainty decreases
         - Or alternatively increase horizon as confidence improves
 
-    Args :
+    Input :
     H_min : int
         Minimum allowable planning horizon.
     H_max : int
@@ -25,10 +25,27 @@ class HorizonScheduler:
             - "decreasing":  H_t ∝ U_t / U_0
             - "increasing":  H_t ∝ 1 - U_t / U_0
             - "exp":         H_t ∝ exp(-gamma * (U_t / U_0))
-        Default is "uncertainty".
     gamma : float
         Sensitivity parameter for exponential mode.
         Larger gamma results in faster horizon growth.
+    beta: float
+        A scaling factor used for confidence thresholding
+    
+    Attributes:
+        U0: float
+            The initial global uncertainty of the environment, used for normalization
+        U_hisotry: list
+            A temporal log og uncertainty values used to calculate stability slopes
+        phase: str
+            The current operational state (exploration/ exploitation)
+        locked: bool
+            A stability flag used for confidence locking.
+            When True, it constrains the planner to an exploitation horizon to prevent late-
+            stage oscillatory behavior
+        conf_window: list
+            A sliding window of recent confidence scores
+            Used for temporal smoothing of phase transitions
+    
     """
 
     def __init__(self, H_min, H_max, mode="decreasing", gamma=1.0, beta = 2.0, robot = None):
@@ -65,10 +82,11 @@ class HorizonScheduler:
 
     def get_H(self, gp_model, grid, t=None, T = None):
         """
-        Compute adaptive planning horizon H_t.
+        Compute adaptive planning horizon H_t using a belief-driven phase-switching mechanism
 
-        The horizon is scaled between H_min and H_max according to
-        the current uncertainty ratio U_t / U_0.
+        The updated method determines the MCTS lookahead depth by evaluating environmental uncertainty and agent confidence. 
+        It transitions between 'exploration' and 'exploitation' phases based on the ratio of the current best-found observation
+        to the predicted maximum. It also implements a 'confidence lock' to stabilize planning during late-stage localization.
 
         Args :
         gp_model : GPModel
@@ -82,6 +100,7 @@ class HorizonScheduler:
         int
             Adaptive rollout length H_t.
         """
+        #Uncertainty and Slope Tracking
         U_t = self.compute_uncertainty(gp_model, grid)
 
         if self.U0 is None:
@@ -94,7 +113,7 @@ class HorizonScheduler:
         else:
             slope = float('inf')
         
-
+        #Stage Initialization
         if not hasattr(self, 'phase'):
             self.phase = 'exploration'
         if not hasattr(self,'locked'):
@@ -112,7 +131,7 @@ class HorizonScheduler:
         # Initialize baseline uncertainty
         if self.U0 is None:
             self.U0 = U_t
-
+        #Belief ratio and Signal Confidence
         ratio = U_t / (self.U0 + 1e-6)
         self.ratio_U = ratio
 
@@ -135,6 +154,8 @@ class HorizonScheduler:
         current_max = self.robot.current_max
 
         confidence_raw = current_max / (pred_val + 1e-6)
+
+        # Temporal Smoothing (COnfidence Window)
         if not hasattr(self, 'conf_window'):
             self.conf_window = []
         
@@ -143,6 +164,8 @@ class HorizonScheduler:
             self.conf_window.pop(0)
 
         confidence = np.mean(self.conf_window)
+
+        #Phase switching logic
         if confidence < 0.6:
             self.phase = 'exploration'
         if confidence > 0.8:
@@ -155,10 +178,10 @@ class HorizonScheduler:
             self.conf_history = []
         if t > 0.5 * T and len(self.conf_history) > 5:
             self.locked = True
-        if self.locked and confidence < 0.7:
+        if self.locked and confidence < 0.7: #Safety release if confidence unexpectly drops
             self.locked = False
 
-        
+        #Horizon Scaling Calculation
         gamma_exploit = 1.0
 
         if self.phase == 'exploration':

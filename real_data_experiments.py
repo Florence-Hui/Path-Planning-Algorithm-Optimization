@@ -5,6 +5,11 @@ Script for running myopic experiments using the run_sim bash script.
 Generally a function of convenience in the event of parallelizing simulation runs.
 Note: some of the parameters may need to be set prior to running the bash script.
 
+Updated Responsibilities:
+    - Performance Logging: Captures real-time metrics including belief uncertainty, robot trajectory, and simple regret
+    - Data Visualization: Generates statistical plots for mean simple regret and standard deviation; identifies divergence points
+    across different planning strategies
+
 License: MIT
 Maintainers: Genevieve Flaspohler and Victoria Preston
 '''

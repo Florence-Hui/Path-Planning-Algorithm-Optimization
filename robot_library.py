@@ -185,8 +185,13 @@ class Robot(object):
 
     def choose_trajectory(self, t):
         ''' Select the best trajectory avaliable to the robot at the current pose, according to the aquisition function.
+
+            THe updated method applies a dynamic distance penalty during the exploitation phase to encourage local refinement
+            near the current best-known location
+
         Input: 
             t (int > 0): the current planning iteration (value of a point can change with algortihm progress)
+
         Output:
             either None or the (best path, best path value, all paths, all values, the max_locs for some functions)
         '''
@@ -232,11 +237,13 @@ class Robot(object):
             else:
                 reward = self.aquisition_function(time = t, xvals = poi, robot_model = self.GP, param = param) / cost
                 
-
+            #Spatial Regularization (Newly Added)
+            #Encourage the robot to refine the local area once a source is identified
             if hasattr(self, 'best_loc') and self.best_loc is not None:
                 if hasattr(self, 'phase') and self.phase == "exploitation":
                     end_point = np.array(poi[-1][0:2])
                     dist = np.linalg.norm(end_point - self.best_loc)
+                    #dynamic lambda increases over time and increases as uncertainty decreases
                     lambda_base = 1.2
                     lambda_stay = lambda_base * (t / float(T))* (1 - ratio_U)
 
@@ -253,6 +260,7 @@ class Robot(object):
     
     def collect_observations(self, xobs):
         ''' Gather noisy samples of the environment and updates the robot's GP model.
+            Track the global maximum value and location discovered during the mission
         Input: 
             xobs (float array): an nparray of floats representing observation locations, with dimension NUM_PTS x 2 '''
         zobs = self.sample_world(xobs)       
@@ -264,6 +272,17 @@ class Robot(object):
                 self.current_max_loc = [x[0],x[1]]
 
     def predict_max(self, t = 0):
+        """
+        Infer the location and magnitude of the global signal maximum using the GP posterior.
+
+        Input:
+            t (int): The current planning iteration. Defaults to 0.
+
+        Output:
+            tuple (np.ndarray, float): 
+                - pred_loc: The coordinates [x, y] of the predicted global maximum.
+                - pred_val: The predicted signal intensity at that location.
+        """
         # If no observations have been collected, return default value
         if self.GP.xvals is None:
             return np.array([0., 0.]), 0.
@@ -281,7 +300,8 @@ class Robot(object):
             data = np.vstack([x1.ravel(), x2.ravel()]).T
         elif self.dimension == 3:
             data = np.vstack([x1.ravel(), x2.ravel(), self.time * np.ones(len(x1.ravel()))]).T
-        observations, var = self.GP.predict_value(data)        
+        observations, var = self.GP.predict_value(data)    
+        #GLobal Maximum Identification    
         idx = np.argmax(observations)
         pred_loc = data[idx]
         pred_val = float(observations[idx])
