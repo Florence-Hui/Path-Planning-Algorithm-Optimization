@@ -23,11 +23,28 @@ This project explores and improves adaptive horizon strategies by:
 
 ## Key Features
 
-- Adaptive horizon scheduling (time + uncertainty driven)
-- Continuous exploration–exploitation transition (no hard switching)
-- Reward-based spatial penalty for stable exploitation
-- Confidence-based phase switching with smoothing
-- Confidence lock mechanism for late-stage stability
-- Multi-run evaluation with average regret visualization
-- Support for MCTS and POMCPOW comparison
+- **Adaptive Horizon Scheduling**
+  - Dynamically adjusts planning horizon based on uncertainty and reward-based confidence
+  - Supports multiple scaling modes: decreasing, increasing, exponential
+
+- **Phase-Switching Mechanism**
+  - Switched between exploration and exploitation stages controlled via confidence thresholds
+  - Double-threshold design reduces unstable switching
+
+- **Confidence-Based Smoothing and Locking**
+  - Temporal smoothing using a confidence window
+
+- **Reward-Based Adaptive Control**
+  - Horizon scaling informed by ratio between current and predicted maximum
+
+- **Spatial Regularization (Trajectory Penalty)**
+  - Penalizes trajectories that move away from the current best location
+  - Encourages local refinement during exploitation stage
+
+- **Adaptive Penalty Strategy**
+  - The penalty weight increases over time and decreases with uncertainty
+  - Improves stability while avoiding premature convergence
+     
+- **Multi-run evaluation with average regret visualization**
+- **Support for MCTS and POMCPOW comparison, although POMCPOW is not that ideal :(**
 
